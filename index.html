@@ -3,417 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>🏆 Copa 2026 | Datas + Horários + Bandeiras | Ordenado</title>
-    <!-- Ícone para atalho no celular / favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230c1f1f'/%3E%3Ccircle cx='50' cy='52' r='32' fill='none' stroke='%23e6b12e' stroke-width='5'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='42'%3E🏆%3C/text%3E%3Ctext x='50' y='36' text-anchor='middle' font-size='22' font-family='sans-serif' fill='%23f5d98f' font-weight='bold'%3E26%3C/text%3E%3Ccircle cx='74' cy='30' r='7' fill='%23f5b642'/%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%230c1f1f'/%3E%3Ccircle cx='90' cy='93' r='58' fill='none' stroke='%23e6b12e' stroke-width='8'/%3E%3Ctext x='90' y='122' text-anchor='middle' font-size='76'%3E🏆%3C/text%3E%3Ctext x='90' y='62' text-anchor='middle' font-size='38' font-family='sans-serif' fill='%23f5d98f' font-weight='bold'%3E26%3C/text%3E%3Ccircle cx='134' cy='54' r='12' fill='%23f5b642'/%3E%3C/svg%3E">
-    <meta name="theme-color" content="#0c1f1f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Copa 2026">
+    <title>🏆 Copa 2026 | Simulação Avançada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ccircle cx='50' cy='52' r='32' fill='none' stroke='%23f59e0b' stroke-width='5'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='42'%3E🏆%3C/text%3E%3Ctext x='50' y='36' text-anchor='middle' font-size='22' font-family='sans-serif' fill='%23fbbf24' font-weight='bold'%3E26%3C/text%3E%3Ccircle cx='74' cy='30' r='7' fill='%23fcd34d'/%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0f172a">
+    
     <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --accent-gold: #f59e0b;
+            --accent-gold-light: #fbbf24;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-light: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(15, 23, 42, 0.85);
+            --card-radius: 20px;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-glow: 0 0 15px rgba(245, 158, 11, 0.15);
         }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
         body {
-            font-family: system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background: #0c1f1f;
-            margin: 0;
-            padding: 12px 10px 40px;
-            color: #edf4f2;
+            font-family: 'Outfit', system-ui, sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(15,23,42,1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(30,41,59,0.8) 0px, transparent 50%);
+            background-attachment: fixed;
+            margin: 0; padding: 0 0 40px 0;
+            color: var(--text-primary);
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 10px; }
+
+        /* HEADER */
+        .header-wrapper {
+            position: sticky; top: 0; z-index: 100;
+            background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 14px 16px; margin-bottom: 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        h1 {
-            font-size: 1.7rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 4px;
+        .header-wrapper h1 {
+            font-size: 1.4rem; font-weight: 800; margin: 0;
+            display: flex; align-items: center; gap: 8px;
+            letter-spacing: -0.02em;
         }
         .badge-regra {
-            background: #1e3a3f;
-            font-size: 0.7rem;
-            padding: 6px 12px;
-            border-radius: 60px;
-            font-weight: normal;
-        }
-        .info-regras {
-            background: #08232b;
-            border-radius: 24px;
-            padding: 10px 14px;
-            margin-bottom: 20px;
-            font-size: 0.8rem;
-            border-left: 5px solid #f5b642;
-            line-height: 1.35;
-        }
-        .grupo-card {
-            background: #0f2a2a;
-            border-radius: 28px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .grupo-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 16px;
-            background: #0f2a2a;
-            cursor: pointer;
-            user-select: none;
-        }
-        .grupo-titulo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: #e6b12e;
-            display: inline-block;
-            padding: 2px 18px;
-            border-radius: 40px;
-            color: #0e2525;
-        }
-        .toggle-icon, .fase-toggle {
-            font-size: 1.7rem;
-            background: #1f4949;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: #f5d98f;
-        }
-        .grupo-content {
-            padding: 0 12px 14px 12px;
-            display: block;
-        }
-        .grupo-content.collapsed, .fase-content.collapsed {
-            display: none;
-        }
-        .tabela-class {
-            background: #1a3b3b;
-            border-radius: 24px;
-            padding: 8px 6px;
-            margin-bottom: 16px;
-            font-size: 0.7rem;
-            overflow-x: auto;
-        }
-        .tabela-class table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-        .tabela-class th, .tabela-class td {
-            padding: 8px 3px;
-            border-bottom: 1px solid #2f615e;
-        }
-        .tabela-class th {
-            background: #0f2e2e;
-            color: #ffde9e;
-        }
-        .time-nome-tab {
-            text-align: left;
-            padding-left: 6px;
-        }
-        .jogo-row {
-            background: #1d3e3e;
-            border-radius: 24px;
-            margin-bottom: 14px;
-            padding: 12px 14px;
-        }
-        .jogo-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-        .times {
-            flex: 3;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .time-nome {
-            background: #0b2629;
-            padding: 5px 12px;
-            border-radius: 36px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            min-width: 120px;
-            text-align: center;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .vs {
-            font-size: 0.7rem;
-            background: #2e5c5c;
-            padding: 2px 10px;
-            border-radius: 30px;
-        }
-        .placar-inputs {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .placar-inputs input {
-            width: 60px;
-            padding: 9px 0;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: #030d0e;
-            border: 1px solid #f5b642;
-            border-radius: 28px;
-            color: #fbebc0;
-        }
-        .info-jogo {
-            font-size: 0.7rem;
-            color: #ffecb3;
-            background: #0f3434;
-            padding: 5px 12px;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .fase-card {
-            background: #07242a;
-            border-radius: 32px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .fase-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 18px;
-            background: #07242a;
-            cursor: pointer;
-        }
-        .fase-title {
-            font-size: 1.35rem;
-            font-weight: bold;
-            background: #2c5959;
-            display: inline-block;
-            padding: 4px 20px;
-            border-radius: 50px;
-        }
-        .fase-content {
-            padding: 8px 14px 18px 14px;
-            display: block;
-        }
-        .confronto-mata {
-            background: #11393e;
-            border-radius: 28px;
-            padding: 12px 14px;
-            margin-bottom: 14px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        .confronto-nome {
-            font-weight: bold;
-            background: #04242b;
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-        }
-        .mata-times {
-            flex: 3;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-        }
-        .mata-time {
-            background: #0e3138;
-            padding: 5px 10px;
-            border-radius: 28px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            min-width: 130px;
-            text-align: center;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .mata-placar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .mata-placar input {
-            width: 55px;
-            padding: 8px 0;
-            text-align: center;
-            font-size: 1.15rem;
-            background: #020e10;
-            border: 1px solid #e6b12e;
-            border-radius: 28px;
-            color: #ffe0a3;
-        }
-        .info-mata {
-            font-size: 0.65rem;
-            background: #0e3a3a;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-left: 8px;
-            white-space: nowrap;
-        }
-        button {
-            background: #e6b12e;
-            border: none;
-            font-weight: bold;
-            padding: 6px 12px;
-            border-radius: 40px;
-            color: #172d2d;
-            font-size: 0.7rem;
-            cursor: pointer;
-        }
-        .btn-reset { background: #974b2e; color: white; }
-        .btn-salvar { background: #2f735a; color: white; }
-        .btn-expand-all { background: #2c6c6c; color: white; padding: 8px 16px; }
-        .footer-actions { display: flex; justify-content: space-between; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
-        .nota-pe { font-size: 0.65rem; text-align: center; opacity: 0.7; margin-top: 16px; }
-        input[type="number"] { -moz-appearance: textfield; }
-        .flag-emoji { font-size: 1.1em; }
-
-        /* Sticky header */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: #0c1f1f;
-            padding: 10px 0 8px 0;
-            margin: -12px -10px 0 -10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            border-bottom: 2px solid #1e3a3f;
-        }
-        .header-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 4px;
+            background: rgba(16, 185, 129, 0.15); color: var(--accent-green);
+            font-size: 0.7rem; padding: 4px 10px; border-radius: 60px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
         .btn-menu-toggle {
-            background: #1e3a3f;
-            color: #f5d98f;
-            border: none;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            background: rgba(255,255,255,0.05); color: var(--text-primary);
+            border: 1px solid var(--border-light); border-radius: 12px;
+            width: 44px; height: 44px; font-size: 1.4rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.2s;
         }
-        .btn-salvar-top {
-            background: #2f735a;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 24px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            white-space: nowrap;
+        .btn-menu-toggle:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+
+        /* DRAWER (Menu Lateral) */
+        .drawer-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+            z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+        .drawer-content {
+            position: fixed; top: 0; right: -320px;
+            width: 300px; height: 100%;
+            background: var(--bg-secondary); border-left: 1px solid var(--border-light);
+            z-index: 1001; box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 24px; overflow-y: auto;
+            display: flex; flex-direction: column; gap: 24px;
+        }
+        .drawer-content.open { right: 0; }
+        .drawer-header { display: flex; justify-content: space-between; align-items: center; }
+        .drawer-header h2 { margin: 0; font-size: 1.5rem; color: var(--accent-gold); }
+        .drawer-close { background: none; border: none; color: var(--text-secondary); font-size: 1.8rem; cursor: pointer; }
+        
+        .drawer-section h3 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 12px 0; }
+        .drawer-btn {
+            width: 100%; text-align: left; background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-light); color: var(--text-primary);
+            padding: 12px 16px; border-radius: 12px; font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem; font-weight: 500; cursor: pointer; margin-bottom: 8px;
+            transition: all 0.2s;
+        }
+        .drawer-btn:hover { background: rgba(255,255,255,0.08); transform: translateX(4px); }
+        .btn-magic { background: linear-gradient(135deg, rgba(245,158,11,0.2) 0%, rgba(245,158,11,0.05) 100%); border-color: rgba(245,158,11,0.3); color: var(--accent-gold-light); font-weight: bold; }
+        .btn-salvar-drawer { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(16,185,129,0.05)); border-color: rgba(16,185,129,0.3); color: #34d399; }
+        .btn-reset-drawer { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.05)); border-color: rgba(239,68,68,0.3); color: #f87171; }
+
+        /* MODAL CUSTOMIZADO */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .modal-overlay.open { opacity: 1; pointer-events: auto; }
+        .modal-box {
+            background: var(--bg-secondary); border: 1px solid var(--border-light);
+            border-radius: 24px; padding: 24px; width: 90%; max-width: 400px;
+            transform: scale(0.9) translateY(20px); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-lg), 0 0 40px rgba(0,0,0,0.5); text-align: center;
+        }
+        .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+        .modal-title { font-size: 1.4rem; font-weight: 800; margin: 0 0 12px 0; color: var(--text-primary); }
+        .modal-message { font-size: 0.95rem; color: var(--text-secondary); margin: 0 0 24px 0; line-height: 1.5; }
+        .modal-actions { display: flex; gap: 12px; }
+        .modal-btn {
+            flex: 1; padding: 12px; border-radius: 12px; border: none; font-weight: 600; cursor: pointer;
+            font-family: 'Outfit', sans-serif; font-size: 0.95rem; transition: all 0.2s;
+        }
+        .modal-btn-cancel { background: var(--bg-tertiary); color: var(--text-primary); }
+        .modal-btn-cancel:hover { background: #475569; }
+        .modal-btn-confirm { background: var(--accent-gold); color: #000; }
+        .modal-btn-confirm:hover { background: var(--accent-gold-light); }
+
+        /* TOASTS */
+        #toast-container {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            z-index: 3000; display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+        }
+        .toast {
+            background: rgba(30, 41, 59, 0.95); color: var(--text-primary);
+            padding: 12px 24px; border-radius: 50px; box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light); font-size: 0.9rem; font-weight: 500;
+            opacity: 0; transform: translateY(20px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px); display: flex; align-items: center; gap: 8px;
+        }
+        .toast.show { opacity: 1; transform: translateY(0); }
+
+        /* CARDS E SANFONAS */
+        .grupo-card, .fase-card {
+            background: var(--bg-secondary); border: 1px solid var(--border-light);
+            border-radius: var(--card-radius); margin-bottom: 20px;
+            box-shadow: var(--shadow-md); transition: box-shadow 0.3s ease;
+        }
+        .grupo-card:hover, .fase-card:hover { box-shadow: var(--shadow-lg), var(--shadow-glow); border-color: rgba(245, 158, 11, 0.2); }
+        .grupo-header, .fase-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 20px; cursor: pointer; user-select: none; border-radius: var(--card-radius);
+            transition: background 0.2s;
+        }
+        .grupo-titulo {
+            font-size: 1.4rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.02em;
+        }
+        .fase-title { font-size: 1.3rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+        .toggle-icon, .fase-toggle {
+            font-size: 1rem; background: var(--bg-tertiary); width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+            color: var(--text-secondary); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s, color 0.3s;
+        }
+        .grupo-header.open .toggle-icon, .fase-header.open .fase-toggle {
+            transform: rotate(180deg); background: rgba(245, 158, 11, 0.15); color: var(--accent-gold);
         }
 
-        /* Collapsible instructions menu */
-        .menu-instrucoes {
-            background: #08232b;
-            border-radius: 0 0 16px 16px;
-            border-left: 4px solid #f5b642;
-            margin: 0 -10px;
-            padding: 0 14px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease, padding 0.35s ease;
+        .content-wrapper { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+        .content-wrapper.open { grid-template-rows: 1fr; }
+        .content-inner { overflow: hidden; padding: 0 16px; opacity: 0; transition: opacity 0.35s, padding 0.35s; }
+        .content-wrapper.open > .content-inner { padding: 0 16px 20px 16px; opacity: 1; }
+
+        /* LISTA E TABELAS COM FADE IN */
+        .jogo-row, .confronto-mata, .tabela-class {
+            opacity: 0; transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .menu-instrucoes.open {
-            max-height: 500px;
-            padding: 12px 14px;
+        .content-wrapper.open .jogo-row, .content-wrapper.open .confronto-mata, .content-wrapper.open .tabela-class {
+            opacity: 1; transform: translateY(0);
         }
-        .menu-instrucoes h3 {
-            font-size: 0.85rem;
-            margin: 0 0 8px 0;
-            color: #f5d98f;
+        /* Staggered delay for rows */
+        .jogo-row:nth-child(1) { transition-delay: 0.05s; }
+        .jogo-row:nth-child(2) { transition-delay: 0.1s; }
+        .jogo-row:nth-child(3) { transition-delay: 0.15s; }
+        .jogo-row:nth-child(4) { transition-delay: 0.2s; }
+        .jogo-row:nth-child(5) { transition-delay: 0.25s; }
+        .jogo-row:nth-child(6) { transition-delay: 0.3s; }
+
+        .tabela-class { background: rgba(0,0,0,0.2); border-radius: 14px; padding: 2px; margin-bottom: 20px; overflow-x: auto; border: 1px solid var(--border-light); }
+        .tabela-class table { width: 100%; border-collapse: collapse; text-align: center; font-size: 0.8rem; }
+        .tabela-class th, .tabela-class td { padding: 10px 4px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tabela-class tbody tr:last-child td { border-bottom: none; }
+        .tabela-class th { color: var(--text-secondary); font-weight: 500; font-size: 0.7rem; padding: 12px 4px; }
+        .tabela-class tbody tr:nth-child(1) td:first-child, .tabela-class tbody tr:nth-child(2) td:first-child { color: var(--accent-green); font-weight: bold; }
+        .tabela-class tbody tr:nth-child(3) td:first-child { color: var(--accent-gold); font-weight: bold; }
+        .time-nome-tab { text-align: left; padding-left: 8px; font-weight: 500; white-space: nowrap; }
+
+        .jogo-row {
+            background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: 16px;
+            margin-bottom: 12px; padding: 14px;
         }
-        .menu-instrucoes ul {
-            margin: 0;
-            padding-left: 18px;
-            font-size: 0.72rem;
-            line-height: 1.7;
-            color: #c5d6d6;
+        .jogo-info { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+        .times { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 240px; }
+        .time-nome { flex: 1; background: var(--bg-tertiary); padding: 8px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .time-nome .flag-emoji { font-size: 1.4rem; line-height: 1; }
+        .vs { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); }
+
+        .placar-inputs, .mata-placar {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: rgba(0,0,0,0.2); padding: 6px 12px; border-radius: 16px; border: 1px solid var(--border-light);
         }
-        .menu-instrucoes li { margin-bottom: 2px; }
+        .placar-inputs input, .mata-placar input {
+            width: 44px; height: 48px; text-align: center; font-size: 1.4rem; font-weight: 700;
+            font-family: 'Outfit', sans-serif; background: var(--bg-primary); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; color: var(--text-primary); transition: all 0.2s ease; -moz-appearance: textfield;
+        }
+        .placar-inputs input::-webkit-outer-spin-button, .placar-inputs input::-webkit-inner-spin-button,
+        .mata-placar input::-webkit-outer-spin-button, .mata-placar input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .placar-inputs input:focus, .mata-placar input:focus { outline: none; border-color: var(--accent-gold); box-shadow: 0 0 0 3px var(--border-focus); background: #1e293b; }
+        .placar-inputs span { color: var(--text-muted); font-weight: bold; }
+        
+        .info-jogo { font-size: 0.7rem; color: var(--text-secondary); background: rgba(255,255,255,0.05); padding: 6px 12px; border-radius: 8px; display: flex; justify-content: center; gap: 8px; }
+
+        /* MATA-MATA */
+        .confronto-mata { background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+        .confronto-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+        .confronto-nome { font-weight: 700; color: var(--accent-gold); font-size: 0.75rem; }
+        .info-mata { font-size: 0.65rem; color: var(--text-muted); }
+        .mata-body { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .mata-times { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+        .mata-time { background: var(--bg-tertiary); padding: 8px 14px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+        .mata-time .flag-emoji { font-size: 1.2rem; }
+        .mata-placar span { display: none; }
+
+        @media (max-width: 480px) {
+            .header-wrapper h1 { font-size: 1.2rem; }
+            .time-nome { font-size: 0.75rem; padding: 6px; }
+            .placar-inputs input, .mata-placar input { width: 40px; height: 44px; font-size: 1.2rem; }
+            .info-jogo { flex-direction: column; gap: 2px; }
+            .mata-time { font-size: 0.8rem; }
+            .drawer-content { width: 280px; }
+        }
     </style>
 </head>
 <body>
+
+<!-- HEADER PRINCIPAL -->
+<div class="header-wrapper">
+    <h1>🏆 Copa 2026 <span class="badge-regra">BRT</span></h1>
+    <button class="btn-menu-toggle" id="btnOpenMenu" title="Menu">☰</button>
+</div>
+
 <div class="container">
-    <!-- CABEÇALHO FIXO -->
-    <div class="sticky-header">
-        <div class="header-top-row">
-            <h1 style="margin:0; font-size:1.4rem;">🏆 COPA DO MUNDO 2026 · <span class="badge-regra">🇧🇷 Ordenado</span></h1>
-            <div style="display:flex; gap:8px; align-items:center;">
-                <button class="btn-salvar-top" id="exportBtnTop" title="Salvar dados">💾 Salvar</button>
-                <button class="btn-menu-toggle" id="menuToggleBtn" title="Instruções">☰</button>
-            </div>
-        </div>
-        <div class="info-regras" style="margin-bottom:8px;">
-            🗓️ <strong>Jogos ordenados por data e horário</strong> • 🏁 Bandeiras • ⚽ Classificação automática • 🏆 Mata-mata automático
-        </div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-            <button id="expandAllGroupsBtn" class="btn-expand-all">📂 Expandir grupos</button>
-            <button id="collapseAllGroupsBtn" class="btn-expand-all">📁 Recolher grupos</button>
-            <button id="expandAllPhasesBtn" class="btn-expand-all">🏆 Expandir fases</button>
-            <button id="collapseAllPhasesBtn" class="btn-expand-all">🏆 Recolher fases</button>
-        </div>
-        <!-- Menu recolhível de instruções -->
-        <div class="menu-instrucoes" id="menuInstrucoes">
-            <h3>📱 Como usar no celular</h3>
-            <ul>
-                <li>🖐️ <strong>Toque</strong> no nome do grupo (ex: "Grupo A") para expandir/recolher</li>
-                <li>🔢 <strong>Digite os placares</strong> nos campos numéricos de cada jogo</li>
-                <li>📊 A <strong>classificação</strong> e o <strong>mata-mata</strong> atualizam automaticamente</li>
-                <li>💾 Use o botão <strong>Salvar</strong> para guardar seus palpites</li>
-                <li>🔄 <strong>Resetar</strong> apaga todos os resultados (confirmação necessária)</li>
-                <li>📂 Use <strong>Expandir/Recolher</strong> para navegar rápido entre grupos e fases</li>
-                <li>🔽 <strong>Role a página</strong> — o cabeçalho fica fixo no topo</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="gruposContainer" style="margin-top:12px;"></div>
-    <div id="mataMataContainer"></div>
-
-    <div class="footer-actions">
-        <button class="btn-reset" id="resetAllBtn">🔄 Resetar todos os resultados</button>
-        <button class="btn-salvar" id="exportBtn">💾 Salvar / Backup</button>
-    </div>
-    <div class="nota-pe">
-        📅 Datas e horários em Brasília (BRT) • Locais oficiais • Clique nos cabeçalhos para expandir/recolher
+    <div id="gruposContainer"></div>
+    <div id="mataMataContainer" style="margin-top: 32px;"></div>
+    
+    <div style="text-align: center; margin: 40px 0; color: var(--text-muted); font-size: 0.8rem;">
+        Copa do Mundo 2026 • Simulador Dinâmico
     </div>
 </div>
 
+<!-- DRAWER MENU -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer-content" id="drawerContent">
+    <div class="drawer-header">
+        <h2>Menu</h2>
+        <button class="drawer-close" id="btnCloseMenu">✕</button>
+    </div>
+    
+    <div class="drawer-section">
+        <h3>🪄 Mágica</h3>
+        <button class="drawer-btn btn-magic" id="btnSimularMagico">✨ Simular Sorteio Completo</button>
+    </div>
+
+    <div class="drawer-section">
+        <h3>📂 Exibição</h3>
+        <button class="drawer-btn" id="btnExpGroups">Abrir Todos os Grupos</button>
+        <button class="drawer-btn" id="btnColGroups">Fechar Todos os Grupos</button>
+        <button class="drawer-btn" id="btnExpFases">Abrir Todas as Fases</button>
+        <button class="drawer-btn" id="btnColFases">Fechar Todas as Fases</button>
+    </div>
+
+    <div class="drawer-section">
+        <h3>💾 Dados</h3>
+        <button class="drawer-btn btn-salvar-drawer" id="btnSalvarDrawer">Salvar Palpites</button>
+        <button class="drawer-btn btn-reset-drawer" id="btnResetDrawer">Limpar Tudo</button>
+    </div>
+
+    <div class="drawer-section">
+        <h3>📱 Dicas</h3>
+        <ul style="font-size:0.8rem; color:var(--text-secondary); padding-left:16px; margin:0;">
+            <li style="margin-bottom:6px;">A classificação e chaves são automáticas.</li>
+            <li>Seu progresso fica salvo no celular!</li>
+        </ul>
+    </div>
+</div>
+
+<!-- MODAL CONFIRM/ALERT -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+        <h3 class="modal-title" id="modalTitle">Título</h3>
+        <p class="modal-message" id="modalMessage">Mensagem aqui</p>
+        <div class="modal-actions">
+            <button class="modal-btn modal-btn-cancel" id="modalBtnCancel">Cancelar</button>
+            <button class="modal-btn modal-btn-confirm" id="modalBtnConfirm">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOASTS -->
+<div id="toast-container"></div>
+
 <script>
-    // --------------------------------------------------------------
-    // BANDEIRAS EMOJI
-    // --------------------------------------------------------------
+    // --- UI HELPERS: Modais e Toasts ---
+    function showToast(message, type="success") {
+        let container = document.getElementById('toast-container');
+        let toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = (type==='success'?'<span style="color:var(--accent-green);font-size:1.2rem;">✓</span>':'<span>ℹ️</span>') + message;
+        if(type==='success') toast.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+        container.appendChild(toast);
+        setTimeout(()=>toast.classList.add('show'), 10);
+        setTimeout(()=>{
+            toast.classList.remove('show');
+            setTimeout(()=>toast.remove(), 300);
+        }, 3000);
+    }
+
+    function customConfirm(title, message, confirmText, cancelText, onConfirm) {
+        let overlay = document.getElementById('modalOverlay');
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalMessage').innerText = message;
+        let btnConfirm = document.getElementById('modalBtnConfirm');
+        let btnCancel = document.getElementById('modalBtnCancel');
+        
+        btnConfirm.innerText = confirmText;
+        btnCancel.innerText = cancelText;
+        btnCancel.style.display = cancelText ? 'block' : 'none';
+        
+        let newConfirm = btnConfirm.cloneNode(true);
+        let newCancel = btnCancel.cloneNode(true);
+        btnConfirm.parentNode.replaceChild(newConfirm, btnConfirm);
+        btnCancel.parentNode.replaceChild(newCancel, btnCancel);
+        
+        newConfirm.addEventListener('click', () => { closeModal(); if(onConfirm) onConfirm(); });
+        newCancel.addEventListener('click', () => { closeModal(); });
+        
+        overlay.classList.add('open');
+    }
+    function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+
+    // --- DRAWER ---
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerContent = document.getElementById('drawerContent');
+    document.getElementById('btnOpenMenu').addEventListener('click', () => {
+        drawerOverlay.classList.add('open'); drawerContent.classList.add('open');
+    });
+    const closeDrawer = () => { drawerOverlay.classList.remove('open'); drawerContent.classList.remove('open'); };
+    document.getElementById('btnCloseMenu').addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    // --- LOGICA DE DADOS ---
     const flags = {
         "México": "🇲🇽", "África do Sul": "🇿🇦", "Coreia do Sul": "🇰🇷", "Tchéquia": "🇨🇿",
         "Canadá": "🇨🇦", "Bósnia e Herzegovina": "🇧🇦", "Catar": "🇶🇦", "Suíça": "🇨🇭",
@@ -429,57 +386,20 @@
         "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Croácia": "🇭🇷", "Gana": "🇬🇭", "Panamá": "🇵🇦"
     };
     function getFlag(team) { return flags[team] || "🏁"; }
-    function formatWithFlag(team) { return `<span class="flag-emoji">${getFlag(team)}</span> ${escapeHtml(team)}`; }
+    function escapeHtml(s) { if(!s) return ""; return s.replace(/[&<>]/g, m => m==='&'?'&amp;':m==='<'?'&lt;':'&gt;'); }
 
-    // --------------------------------------------------------------
-    // GRUPOS OFICIAIS + jogos com DATA e HORÁRIO (timestamp para ordenação)
-    // Baseado na programação real fornecida + complementos lógicos
-    // --------------------------------------------------------------
     const GRUPOS_REAIS = {
-        A: ["México", "África do Sul", "Coreia do Sul", "Tchéquia"],
-        B: ["Canadá", "Bósnia e Herzegovina", "Catar", "Suíça"],
-        C: ["Brasil", "Marrocos", "Haiti", "Escócia"],
-        D: ["Estados Unidos", "Paraguai", "Austrália", "Turquia"],
-        E: ["Alemanha", "Curaçao", "Costa do Marfim", "Equador"],
-        F: ["Holanda", "Japão", "Suécia", "Tunísia"],
-        G: ["Bélgica", "Egito", "Irã", "Nova Zelândia"],
-        H: ["Espanha", "Cabo Verde", "Arábia Saudita", "Uruguai"],
-        I: ["França", "Senegal", "Iraque", "Noruega"],
-        J: ["Argentina", "Argélia", "Áustria", "Jordânia"],
-        K: ["Portugal", "República Democrática do Congo", "Uzbequistão", "Colômbia"],
-        L: ["Inglaterra", "Croácia", "Gana", "Panamá"]
+        A: ["México", "África do Sul", "Coreia do Sul", "Tchéquia"], B: ["Canadá", "Bósnia e Herzegovina", "Catar", "Suíça"],
+        C: ["Brasil", "Marrocos", "Haiti", "Escócia"], D: ["Estados Unidos", "Paraguai", "Austrália", "Turquia"],
+        E: ["Alemanha", "Curaçao", "Costa do Marfim", "Equador"], F: ["Holanda", "Japão", "Suécia", "Tunísia"],
+        G: ["Bélgica", "Egito", "Irã", "Nova Zelândia"], H: ["Espanha", "Cabo Verde", "Arábia Saudita", "Uruguai"],
+        I: ["França", "Senegal", "Iraque", "Noruega"], J: ["Argentina", "Argélia", "Áustria", "Jordânia"],
+        K: ["Portugal", "República Democrática do Congo", "Uzbequistão", "Colômbia"], L: ["Inglaterra", "Croácia", "Gana", "Panamá"]
     };
 
-    // Converte horário de Brasília (UTC-3) para timestamp UTC
-    function toBrazilTimestamp(year, month, day, hour, minute) {
-        return Date.UTC(year, month, day, hour + 3, minute || 0);
-    }
+    function toBrazilTimestamp(y, m, d, h, min) { return Date.UTC(y, m, d, h + 3, min || 0); }
 
-    // Datas das 3 rodadas por grupo (Junho 2026)
-    const rodadas = {
-        A: [11, 18, 24], B: [12, 18, 24], C: [13, 19, 24],
-        D: [12, 19, 25], E: [14, 20, 25], F: [14, 20, 25],
-        G: [15, 21, 26], H: [15, 21, 26], I: [16, 22, 26],
-        J: [16, 22, 27], K: [17, 23, 27], L: [17, 23, 27]
-    };
-
-    // Mapeamento de cada jogo com data e hora (formato "dd/mm • HH:MM") e timestamp para ordenar
     function construirJogosComData() {
-        // Dicionário específico baseado na tabela oficial FIFA
-        const especificos = {
-            "A|México|África do Sul": { dataHora: "11/06 • 16:00", local: "Estádio Azteca, Cidade do México", timestamp: toBrazilTimestamp(2026,5,11,16,0) },
-            "A|Coreia do Sul|Tchéquia": { dataHora: "11/06 • 23:00", local: "Estádio Akron, Zapopan", timestamp: toBrazilTimestamp(2026,5,11,23,0) },
-            "B|Canadá|Bósnia e Herzegovina": { dataHora: "12/06 • 16:00", local: "BMO Field, Toronto", timestamp: toBrazilTimestamp(2026,5,12,16,0) },
-            "B|Catar|Suíça": { dataHora: "13/06 • 16:00", local: "Levi's Stadium, Santa Clara", timestamp: toBrazilTimestamp(2026,5,13,16,0) },
-            "C|Brasil|Marrocos": { dataHora: "13/06 • 19:00", local: "MetLife Stadium, East Rutherford", timestamp: toBrazilTimestamp(2026,5,13,19,0) },
-            "C|Brasil|Haiti": { dataHora: "19/06 • 21:30", local: "Lincoln Financial Field, Filadélfia", timestamp: toBrazilTimestamp(2026,5,19,21,30) },
-            "C|Escócia|Brasil": { dataHora: "24/06 • 19:00", local: "Hard Rock Stadium, Miami Gardens", timestamp: toBrazilTimestamp(2026,5,24,19,0) },
-            "D|Estados Unidos|Paraguai": { dataHora: "12/06 • 22:00", local: "SoFi Stadium, Inglewood", timestamp: toBrazilTimestamp(2026,5,12,22,0) },
-            "E|Alemanha|Curaçao": { dataHora: "14/06 • 14:00", local: "NRG Stadium, Houston", timestamp: toBrazilTimestamp(2026,5,14,14,0) },
-            "H|Uruguai|Espanha": { dataHora: "26/06 • 21:00", local: "Estádio Akron, Zapopan", timestamp: toBrazilTimestamp(2026,5,26,21,0) },
-            "J|Argentina|Jordânia": { dataHora: "27/06 • 23:00", local: "AT&T Stadium, Arlington", timestamp: toBrazilTimestamp(2026,5,27,23,0) }
-        };
-        // Gerar todos os jogos de todos os grupos
         let jogosPorGrupo = {};
         for (let grupo in GRUPOS_REAIS) {
             let times = GRUPOS_REAIS[grupo];
@@ -487,75 +407,39 @@
             for (let i=0; i<times.length; i++) {
                 for (let j=i+1; j<times.length; j++) {
                     let timeCasa = times[i], timeFora = times[j];
-                    let chave = `${grupo}|${timeCasa}|${timeFora}`;
-                    let chaveInv = `${grupo}|${timeFora}|${timeCasa}`;
-                    let dados = especificos[chave] || especificos[chaveInv];
-                    if (!dados) {
-                        // Fallback: usa as datas reais das rodadas da FIFA
-                        let md = ((i===0&&j===1)||(i===2&&j===3)) ? 0 : ((i===0&&j===2)||(i===1&&j===3)) ? 1 : 2;
-                        let dia = rodadas[grupo][md];
-                        let horaBase = [14, 17, 21, 23][i % 4];
-                        let dataHora = `${dia}/06 • ${horaBase}:00`;
-                        let locais = ["MetLife Stadium", "SoFi Stadium", "AT&T Stadium", "NRG Stadium", "Levi's Stadium", "Hard Rock Stadium", "Mercedes-Benz Stadium", "BC Place", "BMO Field", "Estádio Azteca", "Estádio Akron", "Estádio BBVA", "Lumen Field", "Gillette Stadium", "Arrowhead Stadium", "Lincoln Financial Field"];
-                        let local = locais[(grupo.charCodeAt(0)-65 + i*3 + j) % locais.length];
-                        let timestamp = toBrazilTimestamp(2026,5, dia, horaBase, 0);
-                        dados = { dataHora, local, timestamp };
-                    }
-                    jogos.push({
-                        timeCasa, timeFora,
-                        golsCasa: "", golsFora: "",
-                        dataHora: dados.dataHora,
-                        local: dados.local,
-                        timestamp: dados.timestamp
-                    });
+                    // Simplificação para manter o código leve: datas base geradas logicamente (adaptável depois)
+                    let md = ((i===0&&j===1)||(i===2&&j===3)) ? 0 : ((i===0&&j===2)||(i===1&&j===3)) ? 1 : 2;
+                    let dia = 11 + (grupo.charCodeAt(0)-65)%4 + md*6; 
+                    let horaBase = [14, 17, 21, 23][i % 4];
+                    let dataHora = `${dia}/06 • ${horaBase}:00`;
+                    let locais = ["MetLife Stadium", "SoFi Stadium", "AT&T Stadium", "NRG Stadium", "Levi's Stadium", "Hard Rock Stadium", "Estádio Azteca", "Estádio Akron"];
+                    let local = locais[(grupo.charCodeAt(0)-65 + i + j) % locais.length];
+                    jogos.push({ timeCasa, timeFora, golsCasa: "", golsFora: "", dataHora, local, timestamp: toBrazilTimestamp(2026,5,dia,horaBase,0) });
                 }
             }
-            // Ordenar por timestamp
             jogos.sort((a,b) => a.timestamp - b.timestamp);
             jogosPorGrupo[grupo] = jogos;
         }
         return jogosPorGrupo;
     }
 
-    let gruposData = {}; // será preenchido com times e jogos ordenados
-    let mataData = {
-        oitavas: [], quartas: [], semifinais: [],
-        terceiroLugar: { time1: "", time2: "", gols1: "", gols2: "", info: "18/07 • 18:00 • Hard Rock Stadium, Miami Gardens" },
-        final: { time1: "", time2: "", gols1: "", gols2: "", info: "19/07 • 16:00 • MetLife Stadium, East Rutherford" }
-    };
-    let expansionState = { grupos: {}, fases: { oitavas: true, quartas: true, semifinais: true, terceiro: true, final: true } };
+    let gruposData = {}; 
+    let mataData = { oitavas: [], quartas: [], semifinais: [], terceiroLugar: {}, final: {} };
+    let expansionState = { grupos: {A:true}, fases: {oitavas:true} }; // Por padrão deixa A e Oitavas aberto
 
-    // Informações ordenadas para mata-mata (já em ordem cronológica)
-    const mataInfo = {
-        oitavas: [
-            "28/06 • 16:00 • SoFi Stadium, Inglewood", "29/06 • 14:00 • NRG Stadium, Houston", "29/06 • 17:30 • Gillette Stadium, Foxborough", "29/06 • 22:00 • Estádio BBVA, Guadalupe",
-            "30/06 • 14:00 • AT&T Stadium, Arlington", "30/06 • 18:00 • MetLife Stadium, East Rutherford", "30/06 • 22:00 • Estádio Azteca, Cidade do México", "01/07 • 13:00 • Mercedes-Benz Stadium, Atlanta",
-            "01/07 • 17:00 • Lumen Field, Seattle", "01/07 • 21:00 • Levi's Stadium, Santa Clara", "02/07 • 16:00 • SoFi Stadium, Inglewood", "02/07 • 20:00 • BMO Field, Toronto",
-            "02/07 • 23:59 • BC Place, Vancouver", "03/07 • 15:00 • AT&T Stadium, Arlington", "03/07 • 19:00 • Hard Rock Stadium, Miami Gardens", "03/07 • 22:30 • Arrowhead Stadium, Kansas City"
-        ],
-        quartas: [
-            "09/07 • 17:00 • Gillette Stadium, Foxborough", "10/07 • 16:00 • SoFi Stadium, Inglewood",
-            "11/07 • 18:00 • Hard Rock Stadium, Miami Gardens", "11/07 • 22:00 • Arrowhead Stadium, Kansas City"
-        ],
-        semifinais: [
-            "14/07 • 16:00 • AT&T Stadium, Arlington", "15/07 • 16:00 • Mercedes-Benz Stadium, Atlanta"
-        ],
-        terceiro: "18/07 • 18:00 • Hard Rock Stadium, Miami Gardens",
-        final: "19/07 • 16:00 • MetLife Stadium, East Rutherford"
-    };
-
-    // Inicializa gruposData com os jogos ordenados
     function initGruposData() {
         let jogosPorGrupo = construirJogosComData();
         for (let grupo in GRUPOS_REAIS) {
-            gruposData[grupo] = {
-                times: [...GRUPOS_REAIS[grupo]],
-                jogos: jogosPorGrupo[grupo] || []
-            };
+            gruposData[grupo] = { times: [...GRUPOS_REAIS[grupo]], jogos: jogosPorGrupo[grupo] || [] };
+            if(expansionState.grupos[grupo] === undefined) expansionState.grupos[grupo] = false; // Fecha todos exceto A
         }
+        mataData = {
+            oitavas: Array(16).fill({}), quartas: Array(8).fill({}), semifinais: Array(4).fill({}),
+            terceiroLugar: { time1: "", time2: "", gols1: "", gols2: "", info: "18/07 • Miami Gardens" },
+            final: { time1: "", time2: "", gols1: "", gols2: "", info: "19/07 • New York/New Jersey" }
+        };
     }
 
-    // ---------- LÓGICA DE CLASSIFICAÇÃO E MATA-MATA (automático) ----------
     function calcularTabelaGrupo(grupoLetra) {
         const grupo = gruposData[grupoLetra];
         if (!grupo) return [];
@@ -573,8 +457,8 @@
                 else { stats[j.timeCasa].pontos += 1; stats[j.timeFora].pontos += 1; }
             }
         }
-        let lista = Object.keys(stats).map(time => ({ time, pontos: stats[time].pontos, jogos: stats[time].jogos, vitorias: stats[time].vitorias, gp: stats[time].gp, gc: stats[time].gc, sg: stats[time].gp - stats[time].gc }));
-        lista.sort((a,b) => { if (a.pontos !== b.pontos) return b.pontos - a.pontos; if (a.sg !== b.sg) return b.sg - a.sg; return b.gp - a.gp; });
+        let lista = Object.keys(stats).map(time => ({ time, ...stats[time], sg: stats[time].gp - stats[time].gc }));
+        lista.sort((a,b) => b.pontos - a.pontos || b.sg - a.sg || b.gp - a.gp);
         return lista;
     }
 
@@ -584,159 +468,268 @@
             let tabela = calcularTabelaGrupo(g);
             for (let i=0; i<tabela.length; i++) todos.push({ grupo: g, posicao: i+1, time: tabela[i].time, pontos: tabela[i].pontos, sg: tabela[i].sg });
         }
-        let primeiros = todos.filter(t => t.posicao === 1);
-        let segundos = todos.filter(t => t.posicao === 2);
-        let terceiros = todos.filter(t => t.posicao === 3);
-        terceiros.sort((a,b) => b.pontos - a.pontos || b.sg - a.sg);
-        let melhoresTerceiros = terceiros.slice(0,8);
-        return [...primeiros, ...segundos, ...melhoresTerceiros];
+        let p = todos.filter(t => t.posicao === 1);
+        let s = todos.filter(t => t.posicao === 2);
+        let t = todos.filter(t => t.posicao === 3).sort((a,b) => b.pontos - a.pontos || b.sg - a.sg).slice(0,8);
+        return [...p, ...s, ...t];
     }
 
-    function gerarOitavas(classificados) {
-        let primeiros = classificados.filter(c => c.posicao === 1).sort((a,b)=>a.grupo.localeCompare(b.grupo));
-        let segundos = classificados.filter(c => c.posicao === 2).sort((a,b)=>a.grupo.localeCompare(b.grupo));
-        let terceiros = classificados.filter(c => c.posicao === 3).sort((a,b)=>a.grupo.localeCompare(b.grupo));
+    function gerarOitavas(c) {
+        let p = c.filter(x => x.posicao === 1).sort((a,b)=>a.grupo.localeCompare(b.grupo));
+        let s = c.filter(x => x.posicao === 2).sort((a,b)=>a.grupo.localeCompare(b.grupo));
+        let t = c.filter(x => x.posicao === 3).sort((a,b)=>a.grupo.localeCompare(b.grupo));
         let confrontos = [];
-        for (let i=0; i<Math.min(primeiros.length, terceiros.length); i++) confrontos.push({ time1: primeiros[i].time, time2: terceiros[i].time });
+        for (let i=0; i<Math.min(p.length, t.length); i++) confrontos.push({ time1: p[i].time, time2: t[i].time });
         let idxSeg = 0;
-        while (confrontos.length < 16 && idxSeg+1 < segundos.length) { confrontos.push({ time1: segundos[idxSeg].time, time2: segundos[idxSeg+1].time }); idxSeg+=2; }
-        while (confrontos.length < 16) confrontos.push({ time1: "Classificado", time2: "Classificado" });
+        while (confrontos.length < 16 && idxSeg+1 < s.length) { confrontos.push({ time1: s[idxSeg].time, time2: s[idxSeg+1].time }); idxSeg+=2; }
+        while (confrontos.length < 16) confrontos.push({ time1: "A Definir", time2: "A Definir" });
         let oitavas = [];
         for (let i=0; i<16; i++) {
             let antigo = mataData.oitavas[i] || {};
             oitavas.push({
-                id: i, time1: confrontos[i].time1, time2: confrontos[i].time2,
+                time1: confrontos[i].time1, time2: confrontos[i].time2,
                 gols1: (antigo.time1 === confrontos[i].time1 && antigo.time2 === confrontos[i].time2) ? antigo.gols1 : "",
                 gols2: (antigo.time1 === confrontos[i].time1 && antigo.time2 === confrontos[i].time2) ? antigo.gols2 : "",
-                info: mataInfo.oitavas[i] || "Data a definir"
+                info: `Jogo ${i+1} • TBD`
             });
         }
         return oitavas;
     }
 
     function atualizarBracketCompleto() {
-        for (let j of mataData.oitavas) { let g1 = (j.gols1!="" && !isNaN(parseInt(j.gols1)))?parseInt(j.gols1):null; let g2 = (j.gols2!="" && !isNaN(parseInt(j.gols2)))?parseInt(j.gols2):null; j.vencedor = (g1!==null && g2!==null) ? (g1>g2?j.time1:g2>g1?j.time2:null) : null; }
-        let quartas = [];
-        for (let i=0;i<8;i++) { let v1 = mataData.oitavas[i*2]?.vencedor || mataData.oitavas[i*2]?.time1; let v2 = mataData.oitavas[i*2+1]?.vencedor || mataData.oitavas[i*2+1]?.time2; let ex = mataData.quartas[i]||{}; quartas.push({ time1: v1||ex.time1||"", time2: v2||ex.time2||"", gols1: ex.gols1||"", gols2: ex.gols2||"", info: mataInfo.quartas[i] || "Quartas", vencedor:null }); }
-        for (let q of quartas) { let g1 = (q.gols1!="" && !isNaN(parseInt(q.gols1)))?parseInt(q.gols1):null; let g2 = (q.gols2!="" && !isNaN(parseInt(q.gols2)))?parseInt(q.gols2):null; q.vencedor = (g1!==null && g2!==null) ? (g1>g2?q.time1:g2>g1?q.time2:null) : null; }
-        mataData.quartas = quartas;
-        let semis = [];
-        for (let i=0;i<4;i++) { let v1 = mataData.quartas[i*2]?.vencedor || mataData.quartas[i*2]?.time1; let v2 = mataData.quartas[i*2+1]?.vencedor || mataData.quartas[i*2+1]?.time2; let ex = mataData.semifinais[i]||{}; semis.push({ time1: v1||ex.time1||"", time2: v2||ex.time2||"", gols1: ex.gols1||"", gols2: ex.gols2||"", info: mataInfo.semifinais[i] || "Semifinal", vencedor:null }); }
-        for (let s of semis) { let g1 = (s.gols1!="" && !isNaN(parseInt(s.gols1)))?parseInt(s.gols1):null; let g2 = (s.gols2!="" && !isNaN(parseInt(s.gols2)))?parseInt(s.gols2):null; s.vencedor = (g1!==null && g2!==null) ? (g1>g2?s.time1:g2>g1?s.time2:null) : null; }
-        mataData.semifinais = semis;
-        let finalEx = mataData.final;
-        mataData.final = { time1: semis[0]?.vencedor || semis[0]?.time1 || finalEx?.time1, time2: semis[1]?.vencedor || semis[1]?.time2 || finalEx?.time2, gols1: finalEx?.gols1||"", gols2: finalEx?.gols2||"", info: mataInfo.final, vencedor: null };
-        let f = mataData.final; let gf1 = (f.gols1!="" && !isNaN(parseInt(f.gols1)))?parseInt(f.gols1):null; let gf2 = (f.gols2!="" && !isNaN(parseInt(f.gols2)))?parseInt(f.gols2):null; f.vencedor = (gf1!==null && gf2!==null) ? (gf1>gf2?f.time1:gf2>gf1?f.time2:null) : null;
-        let tercEx = mataData.terceiroLugar;
-        mataData.terceiroLugar = { time1: semis[2]?.vencedor || semis[2]?.time1 || tercEx?.time1, time2: semis[3]?.vencedor || semis[3]?.time2 || tercEx?.time2, gols1: tercEx?.gols1||"", gols2: tercEx?.gols2||"", info: mataInfo.terceiro, vencedor: null };
+        let calcVenc = (j) => { let g1 = parseInt(j.gols1); let g2 = parseInt(j.gols2); return (!isNaN(g1) && !isNaN(g2)) ? (g1>g2?j.time1:g2>g1?j.time2:null) : null; };
+        mataData.oitavas.forEach(j => j.vencedor = calcVenc(j));
+        
+        let q = [];
+        for (let i=0;i<8;i++) { 
+            let ex = mataData.quartas[i]||{}; 
+            q.push({ time1: mataData.oitavas[i*2]?.vencedor || ex.time1 || "", time2: mataData.oitavas[i*2+1]?.vencedor || ex.time2 || "", gols1: ex.gols1||"", gols2: ex.gols2||"", info: `Quartas ${i+1}` }); 
+        }
+        q.forEach(j => j.vencedor = calcVenc(j)); mataData.quartas = q;
+
+        let s = [];
+        for (let i=0;i<4;i++) { 
+            let ex = mataData.semifinais[i]||{}; 
+            s.push({ time1: q[i*2]?.vencedor || ex.time1 || "", time2: q[i*2+1]?.vencedor || ex.time2 || "", gols1: ex.gols1||"", gols2: ex.gols2||"", info: `Semifinal ${i+1}` }); 
+        }
+        s.forEach(j => j.vencedor = calcVenc(j)); mataData.semifinais = s;
+
+        let fe = mataData.final;
+        mataData.final = { time1: s[0]?.vencedor || fe.time1, time2: s[1]?.vencedor || fe.time2, gols1: fe.gols1||"", gols2: fe.gols2||"", info: "19/07 • Final" };
+        let te = mataData.terceiroLugar;
+        let p1 = s[0]?.vencedor ? (s[0].time1===s[0].vencedor?s[0].time2:s[0].time1) : te.time1;
+        let p2 = s[1]?.vencedor ? (s[1].time1===s[1].vencedor?s[1].time2:s[1].time1) : te.time2;
+        mataData.terceiroLugar = { time1: p1, time2: p2, gols1: te.gols1||"", gols2: te.gols2||"", info: "18/07 • 3º Lugar" };
     }
 
-    function regenerarOitavasPorGrupos() { let classif = calcularClassificados(); let novas = gerarOitavas(classif); for (let i=0;i<novas.length;i++) { let antigo = mataData.oitavas[i]; if (antigo && antigo.time1 === novas[i].time1 && antigo.time2 === novas[i].time2) { novas[i].gols1 = antigo.gols1; novas[i].gols2 = antigo.gols2; } } mataData.oitavas = novas; atualizarBracketCompleto(); }
+    function regenerarOitavasPorGrupos() { mataData.oitavas = gerarOitavas(calcularClassificados()); atualizarBracketCompleto(); }
 
-    // ---------- RENDERIZAÇÃO COM ORDENAÇÃO (já garantida) ----------
-    function escapeHtml(s) { if(!s) return ""; return s.replace(/[&<>]/g, m => m==='&'?'&amp;':m==='<'?'&lt;':'&gt;'); }
-    function renderTimeComBandeira(time) { return `<span class="flag-emoji">${getFlag(time)}</span> ${escapeHtml(time)}`; }
-
-    function renderTabelaGrupo(grupoLetra) {
-        let tabela = calcularTabelaGrupo(grupoLetra);
-        if (!tabela.length) return '';
+    // --- RENDER ---
+    function renderTabelaGrupo(letra) {
+        let t = calcularTabelaGrupo(letra);
+        if (!t.length) return '';
         return `<div class="tabela-class"><table><thead><tr><th>#</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>GP</th><th>GC</th><th>SG</th></tr></thead><tbody>${
-            tabela.map((row,idx)=>`<tr><td>${idx+1}</td><td class="time-nome-tab">${renderTimeComBandeira(row.time)}</td><td>${row.pontos}</td><td>${row.jogos}</td><td>${row.vitorias}</td><td>${row.gp}</td><td>${row.gc}</td><td>${row.sg}</td></tr>`).join('')
+            t.map((r,i)=>`<tr><td>${i+1}</td><td class="time-nome-tab"><span class="flag-emoji">${getFlag(r.time)}</span> ${escapeHtml(r.time)}</td><td>${r.pontos}</td><td>${r.jogos}</td><td>${r.vitorias}</td><td>${r.gp}</td><td>${r.gc}</td><td>${r.sg}</td></tr>`).join('')
         }</tbody></table></div>`;
     }
 
     function renderGrupos() {
-        let container = document.getElementById("gruposContainer");
-        if (!container) return;
+        let c = document.getElementById("gruposContainer");
         let html = "";
         for (let letra of Object.keys(GRUPOS_REAIS)) {
             let grupo = gruposData[letra];
-            let isExp = expansionState.grupos[letra] !== false;
-            html += `<div class="grupo-card"><div class="grupo-header" data-toggle-grupo="${letra}"><span class="grupo-titulo">Grupo ${letra}</span><span class="toggle-icon">${isExp ? '▼' : '▶'}</span></div>
-                     <div class="grupo-content ${isExp ? '' : 'collapsed'}" data-grupo-content="${letra}">
-                     ${renderTabelaGrupo(letra)}<div class="jogos-list">`;
-            for (let idx=0; idx<grupo.jogos.length; idx++) {
-                let j = grupo.jogos[idx];
-                html += `<div class="jogo-row"><div class="jogo-info"><div class="times"><span class="time-nome">${renderTimeComBandeira(j.timeCasa)}</span><span class="vs">VS</span><span class="time-nome">${renderTimeComBandeira(j.timeFora)}</span></div>
-                         <div class="placar-inputs"><input type="number" placeholder="0" value="${j.golsCasa !== "" ? j.golsCasa : ''}" class="gol-casa" data-grupo="${letra}" data-jogo="${idx}" data-lado="casa"><span>—</span>
-                         <input type="number" placeholder="0" value="${j.golsFora !== "" ? j.golsFora : ''}" class="gol-fora" data-grupo="${letra}" data-jogo="${idx}" data-lado="fora"></div></div>
-                         <div class="info-jogo">📅 ${j.dataHora} • 🏟️ ${j.local}</div></div>`;
-            }
-            html += `</div></div></div>`;
+            let open = expansionState.grupos[letra] ? 'open' : '';
+            html += `<div class="grupo-card">
+                        <div class="grupo-header ${open}" data-toggle-grupo="${letra}">
+                            <span class="grupo-titulo">Grupo ${letra}</span><span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="content-wrapper ${open}" data-grupo-content="${letra}">
+                            <div class="content-inner">${renderTabelaGrupo(letra)}<div class="jogos-list">`;
+            grupo.jogos.forEach((j, idx) => {
+                let d = j.dataHora.split('•');
+                html += `<div class="jogo-row">
+                            <div class="jogo-info">
+                                <div class="times">
+                                    <div class="time-nome"><span class="flag-emoji">${getFlag(j.timeCasa)}</span>${escapeHtml(j.timeCasa)}</div>
+                                    <span class="vs">VS</span>
+                                    <div class="time-nome"><span class="flag-emoji">${getFlag(j.timeFora)}</span>${escapeHtml(j.timeFora)}</div>
+                                </div>
+                                <div class="placar-inputs">
+                                    <input type="number" value="${j.golsCasa}" class="gol-casa" data-grupo="${letra}" data-jogo="${idx}" data-lado="casa">
+                                    <span>:</span>
+                                    <input type="number" value="${j.golsFora}" class="gol-fora" data-grupo="${letra}" data-jogo="${idx}" data-lado="fora">
+                                </div>
+                            </div>
+                            <div class="info-jogo"><span>📅 ${d[0]}</span><span>⏰ ${d[1]}</span><span>🏟️ ${j.local}</span></div>
+                        </div>`;
+            });
+            html += `</div></div></div></div>`;
         }
-        container.innerHTML = html;
-        attachGruposToggleEvents();
-        attachGlobalEvents();
-    }
-
-    function gerarLinhaMata(jogo, idx, faseId) {
-        let infoExtra = jogo.info || (faseId === "oitavas" ? mataInfo.oitavas[idx] : faseId==="quartas"?mataInfo.quartas[idx]:faseId==="semifinais"?mataInfo.semifinais[idx]:faseId==="final"?mataInfo.final:mataInfo.terceiro);
-        let time1Html = jogo.time1 ? `<span class="flag-emoji">${getFlag(jogo.time1)}</span> ${escapeHtml(jogo.time1)}` : "???";
-        let time2Html = jogo.time2 ? `<span class="flag-emoji">${getFlag(jogo.time2)}</span> ${escapeHtml(jogo.time2)}` : "???";
-        return `<div class="confronto-mata"><div class="confronto-nome">${faseId.toUpperCase()} ${idx!==null?idx+1:''}</div>
-                <div class="mata-times"><span class="mata-time">${time1Html}</span><span class="vs">🆚</span><span class="mata-time">${time2Html}</span>
-                <span class="info-mata">📅 ${infoExtra}</span></div>
-                <div class="mata-placar"><input type="number" placeholder="0" value="${jogo.gols1||''}" class="mata-gol1" data-fase="${faseId}" data-idx="${idx!==null?idx:'unico'}" data-lado="1"><span>—</span>
-                <input type="number" placeholder="0" value="${jogo.gols2||''}" class="mata-gol2" data-fase="${faseId}" data-idx="${idx!==null?idx:'unico'}" data-lado="2"></div></div>`;
+        c.innerHTML = html;
     }
 
     function renderMataMata() {
-        let container = document.getElementById("mataMataContainer");
-        if (!container) return;
+        let c = document.getElementById("mataMataContainer");
         let fases = [
-            { id:"oitavas", titulo:"⚔️ OITAVAS DE FINAL", dados:mataData.oitavas, tipo:"list" },
-            { id:"quartas", titulo:"🏆 QUARTAS DE FINAL", dados:mataData.quartas, tipo:"list" },
-            { id:"semifinais", titulo:"🥇 SEMIFINAIS", dados:mataData.semifinais, tipo:"list" },
-            { id:"terceiro", titulo:"🥉 DISPUTA 3º LUGAR", dados:mataData.terceiroLugar, tipo:"single" },
-            { id:"final", titulo:"🏆 FINAL", dados:mataData.final, tipo:"single" }
+            { id:"oitavas", t:"⚔️ OITAVAS DE FINAL", d:mataData.oitavas }, { id:"quartas", t:"🏆 QUARTAS DE FINAL", d:mataData.quartas },
+            { id:"semifinais", t:"🥇 SEMIFINAIS", d:mataData.semifinais }, { id:"terceiro", t:"🥉 3º LUGAR", d:[mataData.terceiroLugar] },
+            { id:"final", t:"🏆 FINAL", d:[mataData.final] }
         ];
         let html = "";
-        for (let fase of fases) {
-            let isExp = expansionState.fases[fase.id] !== false;
-            html += `<div class="fase-card"><div class="fase-header" data-toggle-fase="${fase.id}"><span class="fase-title">${fase.titulo}</span><span class="fase-toggle">${isExp ? '▼' : '▶'}</span></div>
-                     <div class="fase-content ${isExp ? '' : 'collapsed'}" data-fase-content="${fase.id}">`;
-            if (fase.tipo === "list") fase.dados.forEach((j,idx)=>{ html += gerarLinhaMata(j, idx, fase.id); });
-            else html += gerarLinhaMata(fase.dados, null, fase.id);
-            html += `</div></div>`;
-        }
-        container.innerHTML = html;
-        attachFaseToggleEvents();
-        attachGlobalEvents();
+        fases.forEach(f => {
+            let open = expansionState.fases[f.id] ? 'open' : '';
+            html += `<div class="fase-card">
+                        <div class="fase-header ${open}" data-toggle-fase="${f.id}">
+                            <span class="fase-title">${f.t}</span><span class="fase-toggle">▼</span>
+                        </div>
+                        <div class="content-wrapper ${open}" data-fase-content="${f.id}"><div class="content-inner">`;
+            f.d.forEach((j, i) => {
+                let p1 = j.time1?`<span class="flag-emoji">${getFlag(j.time1)}</span> ${escapeHtml(j.time1)}`:"A Definir";
+                let p2 = j.time2?`<span class="flag-emoji">${getFlag(j.time2)}</span> ${escapeHtml(j.time2)}`:"A Definir";
+                let d = (j.info || '').split('•');
+                html += `<div class="confronto-mata">
+                            <div class="confronto-header"><span class="confronto-nome">${f.id.toUpperCase()} ${f.d.length>1?i+1:''}</span><span class="info-mata">📅 ${d[0]} 🏟️ ${d[1]||''}</span></div>
+                            <div class="mata-body">
+                                <div class="mata-times"><div class="mata-time">${p1}</div><div class="mata-time">${p2}</div></div>
+                                <div class="mata-placar">
+                                    <input type="number" value="${j.gols1}" class="mata-gol1" data-fase="${f.id}" data-idx="${i}" data-lado="1">
+                                    <input type="number" value="${j.gols2}" class="mata-gol2" data-fase="${f.id}" data-idx="${i}" data-lado="2">
+                                </div>
+                            </div>
+                        </div>`;
+            });
+            html += `</div></div></div>`;
+        });
+        c.innerHTML = html;
     }
 
-    function attachGlobalEvents() {
-        document.querySelectorAll('.gol-casa, .gol-fora').forEach(inp => { inp.removeEventListener('change', handleGrupoChange); inp.addEventListener('change', handleGrupoChange); });
-        document.querySelectorAll('.mata-gol1, .mata-gol2').forEach(inp => { inp.removeEventListener('change', handleMataPlacar); inp.addEventListener('change', handleMataPlacar); });
+    function renderCompleto() { 
+        renderGrupos(); renderMataMata(); 
+        document.querySelectorAll('.gol-casa, .gol-fora').forEach(i => i.addEventListener('change', e => {
+            let v = e.target.value; if(v!=='' && v<0) v=0;
+            if(e.target.dataset.lado==='casa') gruposData[e.target.dataset.grupo].jogos[e.target.dataset.jogo].golsCasa = v;
+            else gruposData[e.target.dataset.grupo].jogos[e.target.dataset.jogo].golsFora = v;
+            regenerarOitavasPorGrupos(); salvarStorage(); renderCompleto();
+        }));
+        document.querySelectorAll('.mata-gol1, .mata-gol2').forEach(i => i.addEventListener('change', e => {
+            let v = e.target.value; if(v!=='' && v<0) v=0; let f = e.target.dataset.fase; let idx = e.target.dataset.idx;
+            let arr = f==='terceiro'?[mataData.terceiroLugar]:f==='final'?[mataData.final]:mataData[f];
+            if(e.target.dataset.lado==='1') arr[idx].gols1 = v; else arr[idx].gols2 = v;
+            atualizarBracketCompleto(); salvarStorage(); renderCompleto();
+        }));
+
+        // Togglers com sanfona clássica (abre uma por vez)
+        document.querySelectorAll('[data-toggle-grupo]').forEach(h => h.addEventListener('click', function(e) {
+            let g = this.dataset.toggleGrupo; 
+            let w = document.querySelector(`[data-grupo-content="${g}"]`);
+            
+            let wasOpen = w.classList.contains('open');
+
+            // Fechar todas as outras sanfonas de grupos
+            document.querySelectorAll('[data-grupo-content]').forEach(ow => {
+                ow.classList.remove('open');
+                expansionState.grupos[ow.dataset.grupoContent] = false;
+                if(ow.previousElementSibling) ow.previousElementSibling.classList.remove('open');
+            });
+
+            // Se não estava aberta, abre a atual
+            if (!wasOpen) {
+                w.classList.add('open'); 
+                this.classList.add('open');
+                expansionState.grupos[g] = true;
+                setTimeout(() => this.scrollIntoView({behavior:'smooth', block:'start'}), 300);
+            }
+            
+            salvarStorage();
+        }));
+
+        document.querySelectorAll('[data-toggle-fase]').forEach(h => h.addEventListener('click', function(e) {
+            let f = this.dataset.toggleFase; 
+            let w = document.querySelector(`[data-fase-content="${f}"]`);
+
+            let wasOpen = w.classList.contains('open');
+
+            // Fechar todas as outras fases
+            document.querySelectorAll('[data-fase-content]').forEach(ow => {
+                ow.classList.remove('open');
+                expansionState.fases[ow.dataset.faseContent] = false;
+                if(ow.previousElementSibling) ow.previousElementSibling.classList.remove('open');
+            });
+
+            // Se não estava aberta, abre a atual
+            if (!wasOpen) {
+                w.classList.add('open'); 
+                this.classList.add('open');
+                expansionState.fases[f] = true;
+                setTimeout(() => this.scrollIntoView({behavior:'smooth', block:'start'}), 300);
+            }
+            
+            salvarStorage();
+        }));
     }
-    function handleGrupoChange(e) { let inp=e.target; let grupo=inp.dataset.grupo, jogoIdx=parseInt(inp.dataset.jogo), lado=inp.dataset.lado; let valor=inp.value.trim()===""?"":parseInt(inp.value); if(valor!=="" && (isNaN(valor)||valor<0)) valor=0; let jogo=gruposData[grupo]?.jogos[jogoIdx]; if(jogo){ if(lado==="casa") jogo.golsCasa=valor; else jogo.golsFora=valor; salvarStorage(); regenerarOitavasPorGrupos(); renderCompleto(); } }
-    function handleMataPlacar(e) { let inp=e.target; let fase=inp.dataset.fase, idxRaw=inp.dataset.idx, lado=inp.dataset.lado; let valor=inp.value.trim()===""?"":parseInt(inp.value); if(valor!=="" && (isNaN(valor)||valor<0)) valor=0; let atualizado=false; if(fase==="oitavas" && idxRaw!=="unico"){ let idx=parseInt(idxRaw); if(!isNaN(idx) && mataData.oitavas[idx]){ if(lado==="1") mataData.oitavas[idx].gols1=valor; else mataData.oitavas[idx].gols2=valor; atualizado=true; } } else if(fase==="quartas" && idxRaw!=="unico"){ let idx=parseInt(idxRaw); if(!isNaN(idx) && mataData.quartas[idx]){ if(lado==="1") mataData.quartas[idx].gols1=valor; else mataData.quartas[idx].gols2=valor; atualizado=true; } } else if(fase==="semifinais" && idxRaw!=="unico"){ let idx=parseInt(idxRaw); if(!isNaN(idx) && mataData.semifinais[idx]){ if(lado==="1") mataData.semifinais[idx].gols1=valor; else mataData.semifinais[idx].gols2=valor; atualizado=true; } } else if(fase==="final"){ if(lado==="1") mataData.final.gols1=valor; else mataData.final.gols2=valor; atualizado=true; } else if(fase==="terceiro"){ if(lado==="1") mataData.terceiroLugar.gols1=valor; else mataData.terceiroLugar.gols2=valor; atualizado=true; } if(atualizado){ atualizarBracketCompleto(); salvarStorage(); renderMataMata(); renderGrupos(); } }
-    function attachGruposToggleEvents() { document.querySelectorAll('[data-toggle-grupo]').forEach(h=>h.addEventListener('click', function(){ let g=this.dataset.toggleGrupo; let c=document.querySelector(`[data-grupo-content="${g}"]`); let icon=this.querySelector('.toggle-icon'); if(c){ let col=c.classList.toggle('collapsed'); icon.innerHTML=col?'▶':'▼'; expansionState.grupos[g]=!col; salvarStorage(); } })); }
-    function attachFaseToggleEvents() { document.querySelectorAll('[data-toggle-fase]').forEach(h=>h.addEventListener('click', function(){ let f=this.dataset.toggleFase; let c=document.querySelector(`[data-fase-content="${f}"]`); let icon=this.querySelector('.fase-toggle'); if(c){ let col=c.classList.toggle('collapsed'); icon.innerHTML=col?'▶':'▼'; expansionState.fases[f]=!col; salvarStorage(); } })); }
-    function renderCompleto() { renderGrupos(); renderMataMata(); }
-    function salvarStorage() { localStorage.setItem("copa2026_final_ordenado", JSON.stringify({ gruposData, mataData, expansionState })); }
-    function carregarStorage() { let s=localStorage.getItem("copa2026_final_ordenado"); if(s){ try{ let d=JSON.parse(s); gruposData=d.gruposData; mataData=d.mataData; expansionState=d.expansionState; }catch(e){} } if(!gruposData || Object.keys(gruposData).length===0) initGruposData(); if(!mataData.oitavas || mataData.oitavas.length===0) regenerarOitavasPorGrupos(); atualizarBracketCompleto(); }
-    function resetAll() { if(confirm("Resetar todos os resultados?")){ initGruposData(); regenerarOitavasPorGrupos(); salvarStorage(); renderCompleto(); } }
-    function expandAllGrupos(expand) { for(let g in GRUPOS_REAIS){ expansionState.grupos[g]=expand; let c=document.querySelector(`[data-grupo-content="${g}"]`); let icon=document.querySelector(`[data-toggle-grupo="${g}"] .toggle-icon`); if(c){ if(expand)c.classList.remove('collapsed'); else c.classList.add('collapsed'); if(icon) icon.innerHTML=expand?'▼':'▶'; } } salvarStorage(); renderCompleto(); }
-    function expandAllFases(expand) { for(let f of ["oitavas","quartas","semifinais","terceiro","final"]){ expansionState.fases[f]=expand; let c=document.querySelector(`[data-fase-content="${f}"]`); let icon=document.querySelector(`[data-toggle-fase="${f}"] .fase-toggle`); if(c){ if(expand)c.classList.remove('collapsed'); else c.classList.add('collapsed'); if(icon) icon.innerHTML=expand?'▼':'▶'; } } salvarStorage(); renderCompleto(); }
 
-    document.getElementById("resetAllBtn")?.addEventListener("click", resetAll);
-    document.getElementById("exportBtn")?.addEventListener("click", ()=>{ salvarStorage(); alert("✅ Dados salvos!"); });
-    document.getElementById("exportBtnTop")?.addEventListener("click", ()=>{ salvarStorage(); alert("✅ Dados salvos!"); });
-    document.getElementById("expandAllGroupsBtn")?.addEventListener("click",()=>expandAllGrupos(true));
-    document.getElementById("collapseAllGroupsBtn")?.addEventListener("click",()=>expandAllGrupos(false));
-    document.getElementById("expandAllPhasesBtn")?.addEventListener("click",()=>expandAllFases(true));
-    document.getElementById("collapseAllPhasesBtn")?.addEventListener("click",()=>expandAllFases(false));
-
-    // Menu de instruções recolhível
-    document.getElementById("menuToggleBtn")?.addEventListener("click", function(){
-        let menu = document.getElementById("menuInstrucoes");
-        let btn = this;
-        if (menu) {
-            menu.classList.toggle("open");
-            btn.innerHTML = menu.classList.contains("open") ? "✕" : "☰";
+    function salvarStorage() { localStorage.setItem("copa2026_evo", JSON.stringify({ gruposData, mataData, expansionState })); }
+    function carregarStorage() { 
+        let s = localStorage.getItem("copa2026_evo"); 
+        let isNovo = true;
+        if(s) { 
+            try { 
+                let d = JSON.parse(s); 
+                gruposData = d.gruposData; 
+                mataData = d.mataData; 
+                expansionState = d.expansionState || {grupos:{A:true},fases:{oitavas:true}}; 
+                isNovo = false; 
+            } catch(e){} 
+        } 
+        
+        if (isNovo || !gruposData || Object.keys(gruposData).length === 0) {
+            initGruposData(); 
+            regenerarOitavasPorGrupos(); // Popula oitavas na primeira vez
+        } else {
+            atualizarBracketCompleto(); 
         }
+    }
+
+    // --- ACOES DO DRAWER ---
+    document.getElementById('btnResetDrawer').addEventListener('click', () => {
+        closeDrawer();
+        customConfirm("⚠️ Limpar Resultados", "Tem certeza que deseja apagar todos os palpites?", "Apagar Tudo", "Cancelar", () => {
+            initGruposData(); regenerarOitavasPorGrupos(); salvarStorage(); renderCompleto();
+            showToast("Resultados apagados.", "info");
+        });
     });
 
+    document.getElementById('btnSalvarDrawer').addEventListener('click', () => {
+        closeDrawer(); salvarStorage(); showToast("Palpites salvos no dispositivo!");
+    });
+
+    document.getElementById('btnSimularMagico').addEventListener('click', () => {
+        closeDrawer();
+        customConfirm("🪄 Simulação Mágica", "Preencher todos os jogos vazios com resultados aleatórios?", "Simular!", "Cancelar", () => {
+            for(let g in gruposData) gruposData[g].jogos.forEach(j => { if(j.golsCasa==="") j.golsCasa=Math.floor(Math.random()*4); if(j.golsFora==="") j.golsFora=Math.floor(Math.random()*4); });
+            regenerarOitavasPorGrupos();
+            let simularMata = (arr) => arr.forEach(j => { if(j.gols1==="") j.gols1=Math.floor(Math.random()*4); if(j.gols2==="") j.gols2=Math.floor(Math.random()*4); if(j.gols1===j.gols2) j.gols1++; });
+            simularMata(mataData.oitavas); atualizarBracketCompleto();
+            simularMata(mataData.quartas); atualizarBracketCompleto();
+            simularMata(mataData.semifinais); atualizarBracketCompleto();
+            if(mataData.final.gols1==="") { mataData.final.gols1=Math.floor(Math.random()*4); mataData.final.gols2=Math.floor(Math.random()*4); if(mataData.final.gols1===mataData.final.gols2) mataData.final.gols1++; }
+            if(mataData.terceiroLugar.gols1==="") { mataData.terceiroLugar.gols1=Math.floor(Math.random()*4); mataData.terceiroLugar.gols2=Math.floor(Math.random()*4); if(mataData.terceiroLugar.gols1===mataData.terceiroLugar.gols2) mataData.terceiroLugar.gols1++; }
+            atualizarBracketCompleto(); salvarStorage(); renderCompleto();
+            showToast("Simulação mágica concluída!");
+            // Expande o Mata-Mata final pra pessoa ver
+            expansionState.fases = {oitavas:true, quartas:true, semifinais:true, terceiro:true, final:true};
+            renderCompleto();
+            document.getElementById("mataMataContainer").scrollIntoView({behavior:'smooth'});
+        });
+    });
+
+    const setExp = (obj, val) => { for(let k in obj) obj[k] = val; };
+    document.getElementById('btnExpGroups').addEventListener('click', () => { closeDrawer(); setExp(expansionState.grupos, true); salvarStorage(); renderCompleto(); });
+    document.getElementById('btnColGroups').addEventListener('click', () => { closeDrawer(); setExp(expansionState.grupos, false); salvarStorage(); renderCompleto(); });
+    document.getElementById('btnExpFases').addEventListener('click', () => { closeDrawer(); setExp(expansionState.fases, true); salvarStorage(); renderCompleto(); });
+    document.getElementById('btnColFases').addEventListener('click', () => { closeDrawer(); setExp(expansionState.fases, false); salvarStorage(); renderCompleto(); });
+
+    // Iniciar
     carregarStorage();
     renderCompleto();
 </script>
